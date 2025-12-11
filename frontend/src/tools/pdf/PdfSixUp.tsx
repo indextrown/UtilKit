@@ -61,7 +61,7 @@ const PdfSixUp = () => {
       }
 
       const bytes = await out.save({ useObjectStreams: true })
-      const blob = new Blob([bytes], { type: 'application/pdf' })
+      const blob = new Blob([bytes.buffer], { type: 'application/pdf' })
       const link = document.createElement('a')
       link.href = URL.createObjectURL(blob)
       link.download = `multi-${r}x${c}-${file.name}`

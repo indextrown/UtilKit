@@ -14,7 +14,7 @@ const PdfCompress = () => {
       const buffer = await file.arrayBuffer()
       const pdf = await PDFDocument.load(buffer)
       const bytes = await pdf.save({ useObjectStreams: true })
-      const blob = new Blob([bytes], { type: 'application/pdf' })
+      const blob = new Blob([bytes.buffer], { type: 'application/pdf' })
       const link = document.createElement('a')
       link.href = URL.createObjectURL(blob)
       link.download = `compressed-${file.name}`

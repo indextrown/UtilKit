@@ -29,7 +29,7 @@ const PageExtract = () => {
       const copied = await out.copyPages(pdf, indexes)
       copied.forEach((p) => out.addPage(p))
       const bytes = await out.save({ useObjectStreams: true })
-      const blob = new Blob([bytes], { type: 'application/pdf' })
+      const blob = new Blob([bytes.buffer], { type: 'application/pdf' })
       const link = document.createElement('a')
       link.href = URL.createObjectURL(blob)
       link.download = `pages-${pages.replace(/\s+/g, '')}.pdf`

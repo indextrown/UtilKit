@@ -1,3 +1,4 @@
+import type { JSX } from 'react'
 import { useMemo, useState } from 'react'
 import './App.css'
 import Base64Tool from './tools/Base64Tool'

@@ -1,10 +1,12 @@
 import { useState } from 'react'
 
-const algorithms: AlgorithmIdentifier[] = ['SHA-256', 'SHA-384', 'SHA-512']
+type HashAlg = 'SHA-256' | 'SHA-384' | 'SHA-512'
+
+const algorithms: HashAlg[] = ['SHA-256', 'SHA-384', 'SHA-512']
 
 const HashGenerator = () => {
   const [input, setInput] = useState('')
-  const [algorithm, setAlgorithm] = useState<AlgorithmIdentifier>('SHA-256')
+  const [algorithm, setAlgorithm] = useState<HashAlg>('SHA-256')
   const [hash, setHash] = useState('')
   const [error, setError] = useState('')
 
@@ -27,7 +29,7 @@ const HashGenerator = () => {
     <div className="tool">
       <div className="field">
         <label>알고리즘</label>
-        <select value={algorithm.toString()} onChange={(e) => setAlgorithm(e.target.value)}>
+        <select value={algorithm} onChange={(e) => setAlgorithm(e.target.value as HashAlg)}>
           {algorithms.map((algo) => (
             <option key={algo} value={algo}>
               {algo}
