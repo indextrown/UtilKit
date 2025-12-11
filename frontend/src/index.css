@@ -1,0 +1,36 @@
+:root {
+  font-family: 'Inter', 'Pretendard', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #e8eaed;
+  background-color: #0b0d11;
+  line-height: 1.6;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at 20% 20%, #111827, #0b0d11 40%),
+    radial-gradient(circle at 80% 10%, #0d1b2a, #0b0d11 45%),
+    linear-gradient(180deg, #0b0d11 0%, #0e141e 100%);
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
